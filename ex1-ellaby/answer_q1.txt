@@ -1,0 +1,4 @@
+Q1:
+If a division will have a gray level segment with no pixels, the procedure will crash
+because when we calculate the q value for that segment we divide by the number of pixels in that segment
+which in this case is zero, and division by zero causes a crash
