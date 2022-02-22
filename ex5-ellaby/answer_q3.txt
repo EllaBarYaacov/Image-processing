@@ -1,0 +1,26 @@
+1)  number of epochs:
+    As it is shown in the graphs - the validation loss decreases as the number of epochs increases.
+    This happens in all NN: denoising NN and deblurring NN, with 1/2/3/4/5 resblocks.
+    this makes sense since more epochs mean more batches to execute gradient descend on,
+    therefor more steps to minimize the training loss, and as a result also the validation loss.
+
+2)  number of resblocks:
+    both in the deblur NN and the denoise NN, we can see that NN that had more resblocks performed better:
+    deblur:
+    deblur NN  with 1 resblock achieved validaion loss of ~ 0.014
+    while deblur NN with 5 resblock achieved validation loss of ~ 0.008
+    denoise:
+    denoise NN  with 1 resblock achieved validaion loss of ~ 0.0022
+    while denoise NN with 5 resblock achieved validation loss of ~ 0.0020
+
+3)  qualitative description of the images:
+    the less resblocks the deblurr NN had, the more blurred it's output was
+    the less resblocks the denoise NN had, the more noised it's output was
+
+4)  deblurring vs. denoising:
+    in terms of validation loss - the denoising NN performed better achieving lower validation loss.
+    but, in terms of how the image was restored visualy, the restored images of the deblur NN  look much better, and
+    much more similar to the original pictures, i think a possible explanation for this is the fact that blurring is
+    a corruption that is linear- it can be done by convolution, while denoising is not linear, and that's why the
+    rdeblurred image looked much better than the denoised image.
+

@@ -1,0 +1,42 @@
+1)  first try:
+        super_resolution_num_res_blocks = 10
+        batch_size = 100
+        steps_per_epoch = 1500
+        num_epochs = 3
+        patch_size = 32
+        num_channels = 50
+
+        visual results: poor...
+        validation loss: 0.0043
+
+2) second try: more epochs - checking if it will significantly improve the visual results?
+        super_resolution_num_res_blocks = 10
+        batch_size = 100
+        steps_per_epoch = 1500
+        num_epochs = 10
+        patch_size = 32
+        num_channels = 50
+
+        visual results: nice!
+        validation loss: 0.0034
+
+3)  third try: less steps per epoch - it will take less time but will it defect the visual results significantly?
+        super_resolution_num_res_blocks = 10
+        batch_size = 100
+        steps_per_epoch = 100
+        num_epochs = 10
+        patch_size = 32
+        num_channels = 50
+
+        visual results: visually looks pretty much like the second try
+        validation loss: 0.0039
+
+t
+chosen parameters: (second try)
+        super_resolution_num_res_blocks = 10
+        batch_size = 100
+        steps_per_epoch = 1500
+        num_epochs = 10
+        patch_size = 32
+        num_channels = 50
+

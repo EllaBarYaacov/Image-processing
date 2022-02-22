@@ -1,0 +1,11 @@
+the way i implemented 'super_resolution_corruption' function is by taking the input image,
+shrinking it by some factor between 2-4, and than stretching it back by the same factor.
+this action results in an image with low resolution, i.e. less information than the original picture.
+this affect is caused by the fact that when i shrunk the image, inevitably, i lost information that could not be
+restored by simply stretching it back. so when i stretched it back, i got a picture of the same size as the original
+but with less information - this appears as low resolution.
+
+the way i implemented 'learn_super_resolution_model' is very similar to the way i implemented all the other learning
+functions with the only difference of the corruption function being the one i described before.
+giving the model a corruption function, that imitates well the actual corruption of the test images, will give us a model
+that knows the behaviour of real LR corrupted images and thus will perform better when restoring LR images.
